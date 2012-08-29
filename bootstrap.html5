@@ -3,6 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <!-- Le styles -->
+  <link href="../assets/css/bootstrap.css" rel="stylesheet">
+  <style type="text/css">
+    body {
+      padding-top: 60px;
+      padding-bottom: 40px;
+    }
+    .sidebar-nav {
+      padding: 9px 0;
+    }
+  </style>
+  <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
 $for(author-meta)$
   <meta name="author" content="$author-meta$">
 $endfor$
@@ -10,9 +24,16 @@ $if(date-meta)$
   <meta name="dcterms.date" content="$date-meta$">
 $endif$
   <title>$if(title-prefix)$$title-prefix$ - $endif$$if(pagetitle)$$pagetitle$$endif$</title>
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+  <!-- Le fav and touch icons -->
+  <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
 $if(quotes)$
   <style type="text/css">
     q { quotes: "“" "”" "‘" "’"; }
@@ -33,29 +54,92 @@ $for(header-includes)$
   $header-includes$
 $endfor$
 </head>
+
 <body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#">pandoc-bootstrap</a>
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+            Logged in as <a href="#" class="navbar-link">Username</a>
+          </p>
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+
+    <div class="container-fluid">
 $for(include-before)$
 $include-before$
 $endfor$
+      <div class="row-fluid">
+$if(toc)$
+        <nav id="$idprefix$TOC" class="span3">
+          <nav class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Table of Contents</li>
+$toc$
+              <li class="active"><a href="#">Link</a></li>
+            </ul>
+          </div><!--/.well -->
+        </nav><!--/span-->
+$endif$
+        <div class="span9">
+          <div class="hero-unit">
 $if(title)$
-<header>
-<h1 class="title">$title$</h1>
+          <header>
+            <h1 class="title">$title$</h1>
 $for(author)$
-<h2 class="author">$author$</h2>
+            <h2 class="author">$author$</h2>
 $endfor$
 $if(date)$
-<h3 class="date">$date$</h3>
+            <h3 class="date">$date$</h3>
 $endif$
-</header>
-$endif$
-$if(toc)$
-<nav id="$idprefix$TOC">
-$toc$
-</nav>
+      </header>
 $endif$
 $body$
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>Created with <a href="http://johnmacfarlane.net/pandoc/">pandoc</a>, styled with <a href="http://twitter.github.com/bootstrap/">bootstrap</a>.</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+
 $for(include-after)$
 $include-after$
 $endfor$
-</body>
+  </body>
 </html>
