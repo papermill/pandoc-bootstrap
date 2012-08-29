@@ -1,0 +1,1 @@
+#### template to integrate HTML5 output from [pandoc](https://github.com/jgm/pandoc) with [twitter's bootstrap](https://github.com/twitter/bootstrap)
