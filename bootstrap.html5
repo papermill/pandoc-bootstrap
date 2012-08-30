@@ -82,56 +82,56 @@ $endif$
     </div>
   </div>
 
-    <div class="container">
+  <div class="container">
 $for(include-before)$
 $include-before$
 $endfor$
-          <header class="hero-unit" id="header">
+        <header class="hero-unit" id="header">
 $if(title)$
-            <h1 class="title">$title$</h1>
+          <h1 class="title">$title$</h1>
 $for(author)$
-            <h2 class="author">$author$</h2>
+          <h2 class="author">$author$</h2>
 $endfor$
 $if(date)$
-            <h3 class="date">$date$</h3>
+          <h3 class="date">$date$</h3>
 $endif$
-          </header>
+        </header>
 $endif$
-      <div class="row-fluid">
+    <div class="row-fluid">
 $if(toc)$
-        <nav id="$idprefix$TOC" class="span4">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Table of Contents</li>
+      <nav id="$idprefix$TOC" class="span4">
+        <div class="well sidebar-nav">
+          <ul class="nav nav-list">
+            <li class="nav-header">Table of Contents</li>
 $toc$
-              <li class="active"><a href="#">Link</a></li>
-            </ul>
-          </div><!--/.well -->
-        </nav><!--/span-->
+            <li class="active"><a href="#">Link</a></li>
+          </ul>
+        </div><!--/.well -->
+      </nav><!--/span-->
 $endif$
-        <div class="span8">
-            <div class="span12">
+      <div class="span8">
+          <div class="span12">
 $body$
-            </div><!--/span-->
-        </div><!--/span-->
-      </div><!--/row-->
+          </div><!--/span-->
+      </div><!--/span-->
+    </div><!--/row-->
 
-      <hr>
+    <hr>
 
-      <footer>
-        <p class="author">$for(author)$$author$$sep$, $endfor$$if(date)$, $date$.$else$.$endif$</p>
-        <p class="credit">Created with <a href="http://johnmacfarlane.net/pandoc/">pandoc</a>, styled with <a href="http://twitter.github.com/bootstrap/">bootstrap</a>.</p>
-      </footer>
+    <footer>
+      <p class="author">$for(author)$$author$$sep$, $endfor$$if(date)$, $date$.$else$.$endif$</p>
+      <p class="credit">Created with <a href="http://johnmacfarlane.net/pandoc/">pandoc</a>, styled with <a href="http://twitter.github.com/bootstrap/">bootstrap</a>.</p>
+    </footer>
 
-    </div><!--/.fluid-container-->
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="twitter-bootstrap/bootstrap/js/jquery.js"></script>
-    <script src="twitter-bootstrap/bootstrap/js/bootstrap.js"></script>
+  </div><!--/.fluid-container-->
+  <!-- Le javascript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="twitter-bootstrap/bootstrap/js/jquery.js"></script>
+  <script src="twitter-bootstrap/bootstrap/js/bootstrap.js"></script>
 
 $for(include-after)$
 $include-after$
 $endfor$
-  </body>
+</body>
 </html>
