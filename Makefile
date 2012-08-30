@@ -1,6 +1,9 @@
 TWITTER_BOOTSTRAP = ./twitter-bootstrap
 GH_PAGES_DIR = ../pandoc-bootstrap--gh-pages
+GIT = /usr/bin/git
 DATE=$(shell date)
+HASH=$(shell ${GIT} log -1 --pretty=format:%H .)
+PATH=$(shell 'pwd')
 
 # Make the samples
 samples: twitter-bootstrap
@@ -16,12 +19,14 @@ twitter-bootstrap:
 	cd ${TWITTER_BOOTSTRAP}
 	make bootstrap
 
-# TODO: MAKE FOR GH-PAGES 
+# MAKE FOR GH-PAGES 
 gh-pages: samples
 	mv index.html Pandoc-README.generated.html ${GH_PAGES_DIR}
 	rm -rf ${GH_PAGES_DIR}/twitter-bootstrap/bootstrap
 	cp -R twitter-bootstrap/bootstrap ${GH_PAGES_DIR}/twitter-bootstrap/bootstrap
-	@echo "[!] Made Github Pages"
+	@echo "[!] Made Github Pages on ${PATH}"
+	@cd ${GH_PAGES_DIR} && ${GIT} add --all && ${GIT} commit -m "Generated content for 'Github Pages', based on commit ${HASH}" || echo "[X] No changes to commit"
+	@echo "[!] Commited changes"
 
 
 # TODO: WATCH FILES
