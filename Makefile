@@ -3,7 +3,9 @@ DATE=$(shell date)
 
 # Make the sample
 sample:
-	pandoc --toc --html5 Pandoc-Sample.markdown > Pandoc-Sample.generated.html
+	pandoc "Pandoc-Sample.markdown" --toc --standalone --smart --toc --number-sections  --template bootstrap.html5 --output="Pandoc-Sample.generated.html"
+# new pandoc version (>1.9):
+#pandoc "Pandoc-Sample.markdown" --toc --standalone --smart --toc --section-divs --normalize --number-sections  --template bootstrap.html5 --output="Pandoc-Sample.generated.html"
 
 # Make BOOTSTRAP from git submodule
 bootstrap:
