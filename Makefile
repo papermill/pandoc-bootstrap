@@ -1,8 +1,8 @@
 TWITTER_BOOTSTRAP = ./docs/assets/css/bootstrap.css
 DATE=$(shell date)
 
-# Make the sample
-sample:
+# Make the samples
+samples: bootstrap
 	pandoc "Pandoc-Sample.markdown" --toc --standalone --smart --toc --number-sections  --template bootstrap.html5 --output="Pandoc-Sample.generated.html"
 # new pandoc version (>1.9):
 #pandoc "Pandoc-Sample.markdown" --toc --standalone --smart --toc --section-divs --normalize --number-sections  --template bootstrap.html5 --output="Pandoc-Sample.generated.html"
@@ -15,13 +15,10 @@ bootstrap:
 	make bootstrap
 
 # TODO: MAKE FOR GH-PAGES 
-gh-pages: bootstrap docs
-	rm -f docs/assets/bootstrap.zip
-	zip -r docs/assets/bootstrap.zip bootstrap
-	rm -r bootstrap
-	rm -f ../bootstrap-gh-pages/assets/bootstrap.zip
-	node docs/build production
-	cp -r docs/* ../bootstrap-gh-pages
+gh-pages: bootstrap
+	pandoc "README.markdown" --toc --standalone --smart --toc --number-sections  --template bootstrap.html5 --output="index.html"
+	pandoc "Pandoc-README.markdown" --toc --standalone --smart --toc --number-sections  --template bootstrap.html5 --output="Pandoc-README.generated.html"
+
 
 # TODO: WATCH FILES
 watch:
