@@ -17,6 +17,7 @@
     }
   </style>
   <link href="twitter-bootstrap/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="bootstrap-pandoc.css" rel="stylesheet">
 $for(author-meta)$
   <meta name="author" content="$author-meta$">
 $endfor$
