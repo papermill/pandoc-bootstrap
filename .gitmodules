@@ -1,3 +1,6 @@
 [submodule "twitter-bootstrap"]
 	path = twitter-bootstrap
 	url = git://github.com/twitter/bootstrap.git
+[submodule "examples/book-curie-radio-de"]
+	path = examples/book-curie-radio-de
+	url = git@github.com:eins78/book-curie-radio-de.git
