@@ -95,7 +95,8 @@ $body$
       <hr>
 
       <footer>
-        <p>Created with <a href="http://johnmacfarlane.net/pandoc/">pandoc</a>, styled with <a href="http://twitter.github.com/bootstrap/">bootstrap</a>.</p>
+        <p class="author">$for(author)$$author$$sep$, $endfor$$if(date)$, $date$.$else$.$endif$</p>
+        <p class="credit">Created with <a href="http://johnmacfarlane.net/pandoc/">pandoc</a>, styled with <a href="http://twitter.github.com/bootstrap/">bootstrap</a>.</p>
       </footer>
 
     </div><!--/.fluid-container-->
