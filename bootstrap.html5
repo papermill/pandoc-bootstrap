@@ -61,11 +61,20 @@ $for(include-before)$
 $include-before$
 $endfor$
           <header class="hero-unit" id="header">
+$if(title)$
+            <h1 class="title">$title$</h1>
+$for(author)$
+            <h2 class="author">$author$</h2>
+$endfor$
+$if(date)$
+            <h3 class="date">$date$</h3>
+$endif$
           </header>
+$endif$
       <div class="row-fluid">
 $if(toc)$
-        <nav id="$idprefix$TOC" class="span3">
-          <nav class="well sidebar-nav">
+        <nav id="$idprefix$TOC" class="span4">
+          <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Table of Contents</li>
 $toc$
@@ -74,21 +83,10 @@ $toc$
           </div><!--/.well -->
         </nav><!--/span-->
 $endif$
-        <div class="span9">
-          <div class="hero-unit">
-$if(title)$
-          <header>
-            <h1 class="title">$title$</h1>
-$for(author)$
-            <h2 class="author">$author$</h2>
-$endfor$
-$if(date)$
-            <h3 class="date">$date$</h3>
-$endif$
-      </header>
-$endif$
+        <div class="span8">
+            <div class="span12">
 $body$
-          </div>
+            </div><!--/span-->
         </div><!--/span-->
       </div><!--/row-->
 
