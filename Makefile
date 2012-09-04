@@ -24,7 +24,7 @@ twitter-bootstrap:
 
 # MAKE FOR GH-PAGES 
 gh-pages: examples
-	cp output/index.html output/Pandoc-README.generated.html output/curie-radio-de.html ${GH_PAGES_DIR}/
+	cp output/index.html output/Pandoc-README.generated.html output/curie-radio-de.html toc-ol.css ${GH_PAGES_DIR}/
 	rm -rf ${GH_PAGES_DIR}/twitter-bootstrap/bootstrap
 	cp -R twitter-bootstrap/bootstrap ${GH_PAGES_DIR}/twitter-bootstrap/bootstrap
 	@echo "[!] Made Github Pages on ${PATH}"
