@@ -5,10 +5,10 @@ DATE=$(shell date)
 HASH=$(shell ${GIT} log -1 --pretty=format:%H .)
 PATH=$(shell 'pwd')
 
-# Make the samples
-samples: twitter-bootstrap
 	pandoc "README.markdown" --toc --standalone --smart --toc --number-sections  --template bootstrap.html5 --output="index.html"
 	pandoc "Pandoc-README.markdown" --toc --standalone --smart --toc --number-sections  --template bootstrap.html5 --output="Pandoc-README.generated.html"
+# Make the examples
+examples: twitter-bootstrap
 # new pandoc version (>1.9):
 #pandoc "Pandoc-README.markdown" --toc --standalone --smart --toc --section-divs --normalize --number-sections  --template bootstrap.html5 --output="Pandoc-Sample.generated.html"
 
@@ -20,7 +20,7 @@ twitter-bootstrap:
 	make bootstrap
 
 # MAKE FOR GH-PAGES 
-gh-pages: samples
+gh-pages: examples
 	mv index.html Pandoc-README.generated.html ${GH_PAGES_DIR}
 	rm -rf ${GH_PAGES_DIR}/twitter-bootstrap/bootstrap
 	cp -R twitter-bootstrap/bootstrap ${GH_PAGES_DIR}/twitter-bootstrap/bootstrap
