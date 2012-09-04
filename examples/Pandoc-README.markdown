@@ -2,6 +2,9 @@
 % John MacFarlane
 % January 27, 2012
 
+
+**NOTICE**: This is just example output of a work-in-progress [project](https://github.com/eins78/pandoc-bootstrap). The original document can be found [here](http://johnmacfarlane.net/pandoc/).
+
 Synopsis
 ========
 
