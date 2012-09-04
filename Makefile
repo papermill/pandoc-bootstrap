@@ -1,16 +1,18 @@
 TWITTER_BOOTSTRAP = ./twitter-bootstrap
 GH_PAGES_DIR = ../pandoc-bootstrap--gh-pages
 GIT = /usr/bin/git
+PANDOC = ~/.cabal/bin/pandoc
+
 DATE=$(shell date)
 HASH=$(shell ${GIT} log -1 --pretty=format:%H .)
 PATH=$(shell 'pwd')
 
-	pandoc "README.markdown" --toc --standalone --smart --toc --number-sections  --template bootstrap.html5 --output="index.html"
-	pandoc "Pandoc-README.markdown" --toc --standalone --smart --toc --number-sections  --template bootstrap.html5 --output="Pandoc-README.generated.html"
 # Make the examples
 examples: twitter-bootstrap
+	${PANDOC} "README.markdown" --toc --standalone --smart --toc --number-sections  --template bootstrap.html5 --output="index.html"
+	${PANDOC} "Pandoc-README.markdown" --toc --standalone --smart --toc --number-sections  --template bootstrap.html5 --output="Pandoc-README.generated.html"
 # new pandoc version (>1.9):
-#pandoc "Pandoc-README.markdown" --toc --standalone --smart --toc --section-divs --normalize --number-sections  --template bootstrap.html5 --output="Pandoc-Sample.generated.html"
+#${PANDOC} "Pandoc-README.markdown" --toc --standalone --smart --toc --section-divs --normalize --number-sections  --template bootstrap.html5 --output="Pandoc-Sample.generated.html"
 
 # Make BOOTSTRAP from git submodule
 twitter-bootstrap:
