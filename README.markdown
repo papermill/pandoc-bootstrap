@@ -19,7 +19,7 @@ Examples
 TODO/IDEAS
 ==========
 
-(not everything here is in the scope of this repo and will move downstream later)
+(not everything here is in the scope of this repo, so some things will move downstream later)
 
 - Handling of non-linear content (via Tooltips etc)
     - Footnotes
